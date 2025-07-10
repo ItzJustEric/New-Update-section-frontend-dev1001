@@ -1,0 +1,182 @@
+/*
+  Developer Notes:
+  - This CSS styles the News / Updates section to match the "Methods" section on traumacoaching.at.
+  - Uses #news-section for easy targeting by SEO/content teams and CMS.
+  - .editable-content is for future WYSIWYG or dynamic editing.
+  - Responsive and mobile-friendly with media queries.
+  - Add or adjust styles as needed for your CMS or layout.
+  - Added smooth slide-in animations for title and news items on page load.
+*/
+
+/* Animation Keyframes */
+@keyframes slideInFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Animation Classes */
+.slide-in-title {
+  animation: slideInFromTop 0.8s ease-out forwards;
+}
+
+.slide-in-item {
+  animation: slideInFromLeft 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+/* Stagger animation delays for news items */
+.news-item:nth-child(1) { animation-delay: 0.2s; }
+.news-item:nth-child(2) { animation-delay: 0.4s; }
+.news-item:nth-child(3) { animation-delay: 0.6s; }
+.news-item:nth-child(4) { animation-delay: 0.8s; }
+.news-item:nth-child(5) { animation-delay: 1.0s; }
+.news-item:nth-child(6) { animation-delay: 1.2s; }
+
+body {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  background: #f8fafc;
+  margin: 0;
+  padding: 0;
+  color: #4e4057;
+}
+
+#news-section {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(180, 200, 220, 0.10);
+  margin: 2.5rem auto 0 auto;
+  padding: 2.5rem 2rem 2rem 2rem;
+  max-width: 800px;
+  text-align: center;
+  border: 1.5px solid #eae9ed;
+  box-sizing: border-box;
+}
+
+#news-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #6e4d7c;
+  margin-bottom: 2.2rem;
+  letter-spacing: 0.01em;
+}
+
+.editable-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2.2rem;
+  align-items: stretch;
+}
+
+.news-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 6px rgba(180, 200, 220, 0.07);
+  padding: 1.5rem 1.2rem 1.3rem 1.2rem;
+  margin: 0;
+  gap: 2.2rem;
+  text-align: left;
+  transition: box-shadow 0.2s;
+}
+
+.news-category {
+  min-width: 160px;
+  max-width: 200px;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.08rem;
+  font-weight: 400;
+  color: #6e4d7c;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  flex-shrink: 0;
+  margin-top: 0.1em;
+}
+
+.news-description {
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  font-size: 1.08rem;
+  color: #4e4057;
+  line-height: 1.7;
+  flex: 1 1 0%;
+}
+
+@media (max-width: 900px) {
+  #news-section {
+    padding: 1.5rem 0.7rem 1rem 0.7rem;
+    max-width: 98vw;
+  }
+  .news-item {
+    gap: 1.2rem;
+    padding: 1.1rem 0.7rem 1rem 0.7rem;
+  }
+  .news-category {
+    min-width: 120px;
+    font-size: 0.98rem;
+  }
+  .news-description {
+    font-size: 0.98rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #news-section {
+    padding: 1.1rem 0.2rem 0.7rem 0.2rem;
+    max-width: 100vw;
+  }
+  .news-item {
+    flex-direction: column;
+    gap: 0.7rem;
+    padding: 1rem 0.3rem 0.7rem 0.3rem;
+  }
+  .news-category {
+    min-width: 0;
+    max-width: 100%;
+    font-size: 0.97rem;
+    margin-bottom: 0.2em;
+  }
+  .news-description {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #news-section h2 {
+    font-size: 1.1rem;
+  }
+  .news-category {
+    font-size: 0.92rem;
+  }
+  .news-description {
+    font-size: 0.91rem;
+  }
+}
+
+/* Accessibility: Focus style for keyboard navigation */
+.news-item:focus-within {
+  box-shadow: 0 0 0 3px #ad7c9d;
+}
+
+p {
+  color: #886082;
+  font-family:Arial, Helvetica, sans-serif;
+}
