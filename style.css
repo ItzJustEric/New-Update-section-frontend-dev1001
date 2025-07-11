@@ -1,10 +1,9 @@
 /*
   Developer Notes:
-  - This CSS styles the News / Updates section to match the "Methods" section on traumacoaching.at.
-  - Uses #news-section for easy targeting by SEO/content teams and CMS.
-  - .editable-content is for future WYSIWYG or dynamic editing.
+  - This CSS styles the News / Updates section to match Christine's trauma therapy branding.
+  - Uses modern typography (Inter) and soft therapeutic colors.
+  - Includes hover effects and smooth transitions for interactivity.
   - Responsive and mobile-friendly with media queries.
-  - Add or adjust styles as needed for your CMS or layout.
   - Added smooth slide-in animations for title and news items on page load.
 */
 
@@ -27,10 +26,10 @@
 }
 
 body {
-  font-family: 'Georgia', 'Times New Roman', serif;
-  background: linear-gradient(135deg, #f8f6f9 0%, #f1eef3 100%);
-  color: #5a5a5a;
-  line-height: 1.7;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #fdf8fc 0%, #f7f3f9 100%);
+  color: #4a4a4a;
+  line-height: 1.6;
   min-height: 100vh;
   animation: page-slide-in 1s cubic-bezier(0.23, 1, 0.32, 1) both;
 }
@@ -50,12 +49,12 @@ body {
 
 .header h1 {
   font-size: 2.8rem;
-  color: #b8719e;
+  color: #d4a5c8;
   font-weight: 300;
   margin-bottom: 15px;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  font-family: 'Georgia', serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .header p {
@@ -67,12 +66,13 @@ body {
 
 /* News Section */
 .news-section {
-  background: rgba(255, 255, 255, 0.85);
-  border-radius: 2px;
-  box-shadow: 0 1px 10px rgba(184, 113, 158, 0.1);
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(212, 165, 200, 0.08);
   padding: 50px 45px;
   margin-bottom: 40px;
-  border: 1px solid rgba(184, 113, 158, 0.1);
+  border: 1px solid rgba(212, 165, 200, 0.1);
+  backdrop-filter: blur(10px);
 }
 
 .news-header {
@@ -81,31 +81,41 @@ body {
 }
 
 .news-header h2 {
-  font-size: 2rem;
-  color: #b8719e;
-  font-weight: 300;
+  font-size: 2.2rem;
+  color: #d4a5c8;
+  font-weight: 400;
   margin-bottom: 20px;
-  font-family: 'Georgia', serif;
-  letter-spacing: 0.3px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.02em;
 }
 
 .news-header p {
-  color: #8a8a8a;
-  font-size: 1rem;
+  color: #6b6b6b;
+  font-size: 1.1rem;
   max-width: 600px;
   margin: 0 auto;
-  font-style: italic;
+  font-weight: 300;
+  line-height: 1.6;
 }
 
 /* News Items */
 .news-item {
-  border-left: 3px solid #e8d4e8;
+  border-left: 3px solid #f0e6f0;
   padding-left: 25px;
   margin-bottom: 35px;
   position: relative;
-  background: rgba(248, 246, 249, 0.3);
-  padding: 25px;
-  border-radius: 1px;
+  background: rgba(253, 248, 252, 0.5);
+  padding: 30px;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(212, 165, 200, 0.05);
+}
+
+.news-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(212, 165, 200, 0.12);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: rgba(212, 165, 200, 0.15);
 }
 
 .news-item:last-child {
@@ -114,56 +124,78 @@ body {
 
 .news-date {
   position: absolute;
-  right: 25px;
-  top: 25px;
-  background: rgba(184, 113, 158, 0.15);
-  color: #b8719e;
-  padding: 8px 18px;
-  border-radius: 25px;
+  right: 30px;
+  top: 30px;
+  background: rgba(212, 165, 200, 0.1);
+  color: #d4a5c8;
+  padding: 8px 16px;
+  border-radius: 20px;
   font-size: 0.85rem;
   font-weight: 400;
-  font-style: italic;
+  font-family: 'Inter', sans-serif;
 }
 
 .news-item h3 {
-  color: #b8719e;
-  font-size: 1.4rem;
+  color: #d4a5c8;
+  font-size: 1.3rem;
   margin-bottom: 15px;
-  font-weight: 300;
-  font-family: 'Georgia', serif;
-  letter-spacing: 0.2px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
 }
 
 .news-item p {
-  color: #7a7a7a;
+  color: #5a5a5a;
   margin-bottom: 20px;
   line-height: 1.6;
   font-size: 0.95rem;
+  font-weight: 400;
 }
 
 /* Tags and Links */
 .tag {
   display: inline-block;
-  background: rgba(184, 113, 158, 0.8);
-  color: white;
-  padding: 6px 16px;
-  border-radius: 25px;
+  background: rgba(212, 165, 200, 0.15);
+  color: #d4a5c8;
+  padding: 6px 14px;
+  border-radius: 20px;
   font-size: 0.8rem;
   margin-right: 10px;
-  font-weight: 300;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: rgba(212, 165, 200, 0.25);
+  transform: scale(1.05);
 }
 
 .more-link {
-  color: #b8719e;
+  color: #d4a5c8;
   text-decoration: none;
-  font-weight: 400;
-  font-style: italic;
+  font-weight: 500;
   font-size: 0.9rem;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.2s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .more-link:hover {
-  text-decoration: underline;
-  color: #a0628a;
+  color: #c095b8;
+  transform: translateX(2px);
+}
+
+.more-link::after {
+  content: '→';
+  transition: transform 0.2s ease;
+}
+
+.more-link:hover::after {
+  transform: translateX(2px);
 }
 
 /* Content Wrapper */
@@ -174,12 +206,12 @@ body {
 
 /* Enhanced Accessibility */
 .news-item:focus-within {
-  outline: 2px solid rgba(184, 113, 158, 0.3);
+  outline: 2px solid rgba(212, 165, 200, 0.3);
   outline-offset: 2px;
 }
 
 .more-link:focus {
-  outline: 2px solid #b8719e;
+  outline: 2px solid #d4a5c8;
   outline-offset: 2px;
 }
 
@@ -190,9 +222,9 @@ body {
 }
 
 .editable-content[contenteditable="true"] {
-  outline: 2px dashed #b8719e;
-  background: #f8f6fa;
-  box-shadow: 0 0 0 2px #e8d4e8;
+  outline: 2px dashed #d4a5c8;
+  background: #fdf8fc;
+  box-shadow: 0 0 0 2px #f0e6f0;
   cursor: text;
 }
 
@@ -208,10 +240,11 @@ body {
   
   .news-section {
       padding: 35px 25px;
+      border-radius: 12px;
   }
   
   .news-header h2 {
-      font-size: 1.7rem;
+      font-size: 1.8rem;
   }
   
   .news-date {
@@ -221,11 +254,34 @@ body {
   }
   
   .news-item {
-      padding: 20px;
+      padding: 25px;
       margin-bottom: 25px;
+      border-radius: 8px;
   }
   
   .news-item h3 {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
+  }
+  
+  .news-item p {
+      font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+      padding: 30px 12px;
+  }
+  
+  .news-section {
+      padding: 25px 20px;
+  }
+  
+  .news-header h2 {
+      font-size: 1.6rem;
+  }
+  
+  .news-item {
+      padding: 20px;
   }
 }
